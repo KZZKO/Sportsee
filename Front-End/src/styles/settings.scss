@@ -1,0 +1,95 @@
+// |===========================================================================|
+// |--------------------------| Paramètres du site |---------------------------|
+// |===========================================================================|
+
+// --------- Couleur du site ---------
+
+$color-primary: #0dff00;
+// $color-secondary: ;
+
+// --------- Nuance du site ----------
+
+
+// --------- Nuance shadows ----------
+
+
+// --------- Nuance border -----------
+
+
+// --------- Nuance police -----------
+
+
+// --------- Police du site ----------
+
+// @font-face {
+//     font-family: 'Audiowide';
+//     src: url(../assets/fonts/audiowide/Audiowide-Regular.ttf);
+// }
+
+// @font-face {
+//     font-family: 'Righteous';
+//     src: url(../assets/fonts/righteous/Righteous-Regular.ttf);
+// }
+
+// ------- Mixins et variables -------
+
+// $font-title: 'Audiowide';
+
+// $font-main-text: 'Grotesk';
+
+// ---------- Responsive ------------
+
+// Small Mobile version
+$xs: 380px;
+
+// Mobile version
+$sm: 490px;
+
+// Large Mobile / Small tablet version
+$md: 700px;
+
+// Tablet Version
+$lg: 1020px;
+
+// Small desktop Version
+$xl: 1210px;
+
+// Desktop Version
+$xxl: 1504px;
+
+// ------- Ajustement du site --------
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+// ------- Style scrollbar --------
+
+// ::-webkit-scrollbar {
+//     width: 0.4em;
+// }
+
+// ::-webkit-scrollbar-track {
+//     background: hsl(0, 0%, 13%);
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background: hsl(0, 0%, 20%);
+
+//     &:hover {
+//         background: hsl(0 0% 60% / 0.5);
+//     }
+// }
