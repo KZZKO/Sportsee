@@ -4,8 +4,9 @@
 
 // --------- Couleur du site ---------
 
-$color-primary: #0dff00;
-// $color-secondary: ;
+$color-primary: black;
+$color-secondary: #E60000;
+$color-tr: white;
 
 // --------- Nuance du site ----------
 
@@ -21,35 +22,19 @@ $color-primary: #0dff00;
 
 // --------- Police du site ----------
 
-// @font-face {
-//     font-family: 'Audiowide';
-//     src: url(../assets/fonts/audiowide/Audiowide-Regular.ttf);
-// }
-
-// @font-face {
-//     font-family: 'Righteous';
-//     src: url(../assets/fonts/righteous/Righteous-Regular.ttf);
-// }
+@font-face {
+    font-family: 'Roboto';
+    src: url(../assets/fonts/Roboto/static/Roboto-Regular.ttf);
+}
 
 // ------- Mixins et variables -------
 
-// $font-title: 'Audiowide';
-
-// $font-main-text: 'Grotesk';
+$font-text: 'Roboto';
 
 // ---------- Responsive ------------
 
-// Small Mobile version
-$xs: 380px;
-
-// Mobile version
-$sm: 490px;
-
-// Large Mobile / Small tablet version
-$md: 700px;
-
 // Tablet Version
-$lg: 1020px;
+$lg: 1024px;
 
 // Small desktop Version
 $xl: 1210px;
