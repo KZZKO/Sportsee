@@ -1,5 +1,7 @@
-import SportseeLogo from '../../assets/images/Sportseelogo.webp';
 import './index.scss';
+
+// IMP// 
+import SportseeLogo from '../../assets/images/Sportseelogo.webp';
 
 export const Header = () => {
 

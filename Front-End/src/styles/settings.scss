@@ -4,9 +4,9 @@
 
 // --------- Couleur du site ---------
 
-$color-primary: black;
+$color-primary: #000000;
 $color-secondary: #E60000;
-$color-tr: white;
+$color-tr: #ffffff;
 
 // --------- Nuance du site ----------
 
@@ -27,9 +27,16 @@ $color-tr: white;
     src: url(../assets/fonts/Roboto/static/Roboto-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Roboto-title';
+    src: url(../assets/fonts/Roboto/static/Roboto-Medium.ttf);
+}
+
 // ------- Mixins et variables -------
 
 $font-text: 'Roboto';
+
+$font-title: 'Roboto-title';
 
 // ---------- Responsive ------------
 

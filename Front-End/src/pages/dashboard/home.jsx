@@ -7,10 +7,10 @@ export const Index = () => {
     return (
         <>
             <Header />
-            <div className="main-section">
+            <main className="main-section">
                 <Nav />
                 <Dashboard />
-            </div>
+            </main>
         </>
     )
 }

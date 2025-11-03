@@ -12,9 +12,35 @@
     padding-top: 80px;
     padding-left: 200px;
 
-    div {
-        width: 100%;
-        height: 100%;
-        border: 2px solid red;
+    .dashboard-header {
+        font-family: $font-title;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: $color-primary;
+            margin: 0;
+            margin-bottom: 20px;
+
+            span {
+                color: $color-secondary;
+            }
+        }
+
+        P {
+            font-family: $font-text;
+        }
+    }
+
+    .dashboard-content {
+
+        .dashboard-content-left {
+
+            .content-top {}
+
+            .content-bot {}
+        }
+
+        .dashboard-content-right {}
     }
 }
