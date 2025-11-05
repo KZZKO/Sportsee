@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { getUserMainData } from "../../services/api";
 import "./index.scss";
 
+// IMP//
+import { DailyActivity } from "../dailyactivity/barchart";
+
 export const Dashboard = () => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
@@ -26,7 +29,7 @@ export const Dashboard = () => {
             <div className="dashboard-content">
                 <div className="dashboard-content-left">
                     <div className="content-top">
-
+                        <DailyActivity />
                     </div>
                     <div className="content-bot">
 

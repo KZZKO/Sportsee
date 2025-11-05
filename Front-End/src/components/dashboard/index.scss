@@ -10,10 +10,11 @@
 
     width: 100%;
     padding-top: 80px;
-    padding-left: 200px;
+    margin-left: 200px;
 
     .dashboard-header {
         font-family: $font-title;
+        margin-bottom: 50px;
 
         h2 {
             font-size: 2.5rem;
@@ -29,18 +30,50 @@
 
         P {
             font-family: $font-text;
+            font-size: 1.2rem;
         }
     }
 
     .dashboard-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
         .dashboard-content-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
 
-            .content-top {}
+            .content-top {
+                position: relative;
+                width: 100%;
+                background-color: $background-chart-gray;
+                border-radius: 10px;
+
+                .daily-activity {
+
+                    h2 {
+                        position: absolute;
+                        top: 0;
+                        left: 30px;
+                        font-family: $font-text;
+                        font-size: 1rem;
+                    }
+                }
+            }
 
             .content-bot {}
         }
 
-        .dashboard-content-right {}
+        .dashboard-content-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 20%;
+        }
     }
 }
