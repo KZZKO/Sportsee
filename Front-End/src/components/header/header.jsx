@@ -8,11 +8,11 @@ export const Header = () => {
     return (
         <header>
             <nav>
+                <div className='logo'>
+                    <img src={SportseeLogo} alt="Logo SportSee" />
+                    <h1>SportSee</h1>
+                </div>
                 <ul>
-                    <li>
-                        <img src={SportseeLogo} alt="Logo SportSee" />
-                        <h1>SportSee</h1>
-                    </li>
                     <li>Accueil</li>
                     <li>Profil</li>
                     <li>Réglage</li>

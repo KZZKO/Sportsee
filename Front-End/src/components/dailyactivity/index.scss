@@ -5,3 +5,59 @@
 @import "/src/styles/settings.scss";
 
 // =============================================================================
+
+.daily-activity {
+    position: relative;
+    background-color: $background-chart-gray;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 50px;
+    width: 80%;
+
+    h2 {
+        position: absolute;
+        top: 12px;
+        left: 30px;
+        font-family: $font-text;
+        font-size: 1rem;
+    }
+
+    .recharts-responsive-container {
+        position: relative;
+        font-family: $font-text;
+
+        .recharts-legend-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+
+            .recharts-default-legend {
+                position: absolute;
+                top: -25px;
+                right: -15px;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+
+                .recharts-legend-item {
+                    display: flex !important;
+                    flex-direction: row;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    gap: 8px;
+
+                    span {
+                        color: $color-text-gray !important;
+                    }
+                }
+            }
+        }
+    }
+}

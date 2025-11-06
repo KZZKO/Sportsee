@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Index } from './pages/dashboard/home.jsx';
+import { Index } from './pages/home/home.jsx';
 import './styles/style.css'
 
 

@@ -9,7 +9,7 @@
 .section-dashboard {
 
     width: 100%;
-    padding-top: 80px;
+    padding-top: 50px;
     margin-left: 200px;
 
     .dashboard-header {
@@ -48,24 +48,12 @@
             width: 80%;
 
             .content-top {
-                position: relative;
                 width: 100%;
-                background-color: $background-chart-gray;
-                border-radius: 10px;
-
-                .daily-activity {
-
-                    h2 {
-                        position: absolute;
-                        top: 0;
-                        left: 30px;
-                        font-family: $font-text;
-                        font-size: 1rem;
-                    }
-                }
             }
 
-            .content-bot {}
+            .content-bot {
+                width: 100%;
+            }
         }
 
         .dashboard-content-right {

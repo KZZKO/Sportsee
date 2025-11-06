@@ -43,9 +43,13 @@ export const DailyActivity = () => {
             return (
                 <div
                     style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        gap: "20px",
                         backgroundColor: "#E60000",
                         color: "#fff",
-                        padding: "10px",
+                        padding: "10px 5px",
                         textAlign: "center",
                         fontSize: "12px",
                         lineHeight: "20px",
@@ -83,17 +87,16 @@ export const DailyActivity = () => {
                         dataKey="name"
                         tickLine={false}
                         axisLine={false}
-                        tick={{ fontSize: 12 }}
+                        tick={{ fontSize: 15 }}
                         dy={10}
                         stroke="#e3e3e3ff"
-
                     />
                     <YAxis
                         yAxisId="kilogram"
                         orientation="right"
                         tickLine={false}
                         axisLine={false}
-                        tick={{ fontSize: 12 }}
+                        tick={{ fontSize: 15 }}
                     />
                     <YAxis yAxisId="calories" hide={true} />
 
@@ -103,7 +106,8 @@ export const DailyActivity = () => {
                         verticalAlign="top"
                         align="right"
                         iconType="circle"
-                        height={36}
+                        iconSize={10}
+                        height={35}
                         wrapperStyle={{
                             top: 0,
                             right: 0,

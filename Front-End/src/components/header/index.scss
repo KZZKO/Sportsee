@@ -17,14 +17,54 @@ header {
     user-select: none;
 
     nav {
+        position: relative;
         width: 100%;
         padding-left: 30px;
         padding-right: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .logo {
+            position: absolute;
+            top: -14px;
+            left: 25px;
+            z-index: 11;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-family: $font-text;
+            cursor: pointer;
+
+            &:hover {
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                transition: 0.3s ease;
+            }
+
+            h1 {
+                color: $color-secondary;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+        }
+
 
         ul {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+            width: 75%;
 
             li {
                 display: flex;
@@ -39,17 +79,6 @@ header {
 
                 &:hover {
                     color: $color-secondary;
-                }
-
-                img {
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 10px;
-                }
-
-                h1 {
-                    color: $color-secondary;
-                    font-size: 1.4rem;
                 }
             }
         }
