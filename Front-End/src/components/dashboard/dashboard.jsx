@@ -4,7 +4,11 @@ import "./index.scss";
 
 // IMP //
 import { DailyActivity } from "../dailyactivity/barchart";
+import { LengthSession } from "../lengthactivity/linechart";
+import { PerfChart } from "../perfactivity/radarchart";
+import { ScoreChart } from "../scoreactivity/radialbarchart";
 import { NutrimentCard } from "../nutriment/nutriment";
+
 import CalLogo from '../../assets/images/energy.png';
 import ProtLogo from '../../assets/images/chicken.png';
 import GluLogo from '../../assets/images/apple.png';
@@ -23,8 +27,7 @@ export const Dashboard = () => {
     if (error) return <p>Erreur : {error}</p>;
     if (!user) return <p>Chargement...</p>;
 
-    const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
-        user.keyData;
+    const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = user.keyData;
 
     return (
         <section className="section-dashboard">
@@ -40,9 +43,9 @@ export const Dashboard = () => {
                         <DailyActivity />
                     </div>
                     <div className="content-bot">
-                        <div className="test">
-
-                        </div>
+                        <LengthSession />
+                        <PerfChart />
+                        <ScoreChart />
                     </div>
                 </div>
                 <div className="dashboard-content-right">

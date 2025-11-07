@@ -1,0 +1,53 @@
+// |===========================================================================|
+// |-------------------------| Performance Style |-----------------------------|
+// |===========================================================================|
+
+@import "/src/styles/settings.scss";
+
+// =============================================================================
+
+.score-chart {
+    position: relative;
+    background-color: $background-chart-gray;
+    border-radius: 5px;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-text;
+
+    .score-title {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 0.9rem;
+        color: $color-primary;
+    }
+
+    .score-center {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: $color-tr;
+        width: 166px;
+        height: 166px;
+        border-radius: 50%;
+        gap: 10px;
+
+        .score-percent {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: $color-primary;
+        }
+
+        .score-text {
+            font-size: 0.9rem;
+            color: $color-text-gray;
+            line-height: 1.5;
+        }
+    }
+}
