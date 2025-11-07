@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { getUserMainData } from "../../services/api";
 import "./index.scss";
 
-// IMP//
+// IMP //
 import { DailyActivity } from "../dailyactivity/barchart";
+import { NutrimentCard } from "../nutriment/nutriment";
+import CalLogo from '../../assets/images/energy.png';
+import ProtLogo from '../../assets/images/chicken.png';
+import GluLogo from '../../assets/images/apple.png';
+import LipLogo from '../../assets/images/cheeseburger.png';
 
 export const Dashboard = () => {
     const [user, setUser] = useState(null);
@@ -17,6 +22,9 @@ export const Dashboard = () => {
 
     if (error) return <p>Erreur : {error}</p>;
     if (!user) return <p>Chargement...</p>;
+
+    const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
+        user.keyData;
 
     return (
         <section className="section-dashboard">
@@ -32,13 +40,46 @@ export const Dashboard = () => {
                         <DailyActivity />
                     </div>
                     <div className="content-bot">
+                        <div className="test">
 
+                        </div>
                     </div>
                 </div>
                 <div className="dashboard-content-right">
-
+                    <NutrimentCard
+                        NutImg={CalLogo}
+                        NutAlt="Calories"
+                        NutAmount={calorieCount}
+                        NutUnit="kCal"
+                        NutType="Calories"
+                        bgColor="#FF000020"
+                    />
+                    <NutrimentCard
+                        NutImg={ProtLogo}
+                        NutAlt="Protéines"
+                        NutAmount={proteinCount}
+                        NutUnit="g"
+                        NutType="Protéines"
+                        bgColor="#4AB8FF20"
+                    />
+                    <NutrimentCard
+                        NutImg={GluLogo}
+                        NutAlt="Glucides"
+                        NutAmount={carbohydrateCount}
+                        NutUnit="g"
+                        NutType="Glucides"
+                        bgColor="#F9CE2320"
+                    />
+                    <NutrimentCard
+                        NutImg={LipLogo}
+                        NutAlt="Lipides"
+                        NutAmount={lipidCount}
+                        NutUnit="g"
+                        NutType="Lipides"
+                        bgColor="#FD518120"
+                    />
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}

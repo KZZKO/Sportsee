@@ -1,0 +1,54 @@
+// |===========================================================================|
+// |---------------------------| Nutriment Style |-----------------------------|
+// |===========================================================================|
+
+@import "/src/styles/settings.scss";
+
+// =============================================================================
+
+.nut-card {
+    width: 100%;
+    padding: 30px 0;
+    border-radius: 5px;
+    background-color: $background-chart-gray;
+
+    .nut-card-int {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        .nut-left-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+
+            // img {}
+        }
+
+        .nut-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5px;
+            width: 30%;
+
+            .nut-right-title {
+                font-family: $font-title;
+                font-size: 1.2rem;
+                color: $color-primary;
+            }
+
+            .nut-right-text {
+                font-family: $font-text;
+                font-size: 0.9rem;
+                color: $color-text-gray;
+            }
+        }
+    }
+}
