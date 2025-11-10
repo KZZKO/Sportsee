@@ -17,12 +17,27 @@
     justify-content: center;
     font-family: $font-text;
 
+    @media (max-width: $lg) {
+
+        height: 240px;
+    }
+
+    @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+        height: 210px;
+    }
+
     .score-title {
         position: absolute;
         top: 10px;
         left: 20px;
         font-size: 0.9rem;
         color: $color-primary;
+
+        @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+            top: 0;
+        }
     }
 
     .score-center {
@@ -32,22 +47,28 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        background-color: $color-tr;
-        width: 166px;
-        height: 166px;
-        border-radius: 50%;
         gap: 10px;
 
         .score-percent {
             font-size: 1.8rem;
             font-weight: 700;
             color: $color-primary;
+
+            @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+                font-size: 1.4rem;
+            }
         }
 
         .score-text {
             font-size: 0.9rem;
             color: $color-text-gray;
             line-height: 1.5;
+
+            @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+                font-size: 0.8rem;
+            }
         }
     }
 }

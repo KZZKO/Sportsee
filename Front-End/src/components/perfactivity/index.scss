@@ -16,6 +16,16 @@
     justify-content: center;
     overflow: hidden;
 
+    @media (max-width: $lg) {
+
+        height: 240px;
+    }
+
+    @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+        height: 210px;
+    }
+
     .recharts-polar-grid-angle {
         display: none;
     }

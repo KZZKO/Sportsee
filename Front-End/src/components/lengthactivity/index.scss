@@ -16,6 +16,16 @@
     font-family: $font-text;
     overflow: hidden;
 
+    @media (max-width: $lg) {
+
+        height: 240px;
+    }
+
+    @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+        height: 210px;
+    }
+
     h3 {
         font-size: 0.9rem;
         font-weight: 500;

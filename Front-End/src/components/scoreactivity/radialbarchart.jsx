@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getUserMainData } from "../../services/api";
 import "./index.scss";
 
-// IMP//
+// Recharts
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 export const ScoreChart = () => {
@@ -30,27 +30,29 @@ export const ScoreChart = () => {
             <h3 className="score-title">Score</h3>
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart
-                    innerRadius="70%"
-                    outerRadius="80%"
-                    barSize={10}
                     data={data}
                     startAngle={90}
                     endAngle={450}
+                    innerRadius="70%"
+                    outerRadius="80%"
+                    barSize={10}
                 >
-                    <PolarAngleAxis
-                        type="number"
-                        domain={[0, 100]}
-                        tick={false}
-                    />
                     <RadialBar
                         dataKey="value"
                         cornerRadius={10}
+                        background={{
+                            fill: "white",
+                        }}
                     />
+                    <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
                 </RadialBarChart>
             </ResponsiveContainer>
+
             <div className="score-center">
                 <p className="score-percent">{score}%</p>
-                <p className="score-text">de votre<br />objectif</p>
+                <p className="score-text">
+                    de votre<br />objectif
+                </p>
             </div>
         </div>
     );

@@ -1,5 +1,0 @@
-- Finir le radialBarChart (fond blanc)
-- Faire le responsive
-- Retirer les erreurs dans la console
-- Corriger le problème sur lineChart (Mardi et Mercredi similaire)
-- Arrondire la line chart 

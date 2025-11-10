@@ -13,6 +13,11 @@
     padding-top: 50px;
     width: 100%;
 
+    @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+        padding-top: 10px;
+    }
+
     h2 {
         position: absolute;
         top: 12px;
@@ -44,6 +49,12 @@
                 justify-content: flex-start;
                 align-items: center;
                 gap: 20px;
+
+                @media (max-width: $xs-width) and (max-height: $xs-height) {
+
+                    top: 15px;
+                    right: 0;
+                }
 
                 .recharts-legend-item {
                     display: flex !important;
