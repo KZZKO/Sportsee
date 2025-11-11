@@ -62,6 +62,10 @@ $xl: 1340px;
 
 * {
     scroll-behavior: smooth;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 body {
