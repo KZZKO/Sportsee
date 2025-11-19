@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserMainData } from "../../services/api";
 import "./index.scss";
 
@@ -6,16 +7,32 @@ import "./index.scss";
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 export const ScoreChart = () => {
+    const { id } = useParams();
+    const userId = Number(id) || 12;
+
     const [score, setScore] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        getUserMainData(12)
-            .then((data) => {
+        async function loadScore() {
+            try {
+                const data = await getUserMainData(userId);
                 const userScore = data.todayScore || data.score || 0;
                 setScore(userScore * 100);
-            })
-            .catch((err) => console.error(err));
-    }, []);
+            } catch (err) {
+                console.error(err);
+                setError("Impossible de charger le score.");
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadScore();
+    }, [userId]);
+
+    if (loading) return <p>Chargement...</p>;
+    if (error) return <p>{error}</p>;
 
     const data = [
         {

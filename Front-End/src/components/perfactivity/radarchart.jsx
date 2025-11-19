@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserPerformance } from "../../services/api";
 import "./index.scss";
 
@@ -6,18 +7,25 @@ import "./index.scss";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
 export const PerfChart = () => {
+    const { id } = useParams();
+    const userId = Number(id) || 12;
+
     const [perfData, setPerfData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        getUserPerformance(12)
-            .then((data) => {
+        async function loadPerformance() {
+            try {
+                const data = await getUserPerformance(userId);
+
                 const kindMapping = {
-                    1: "Cardio",
-                    2: "Energie",
-                    3: "Endurance",
-                    4: "Force",
-                    5: "Vitesse",
-                    6: "Intensité",
+                    1: "Energie",
+                    2: "Cardio",
+                    3: "Intensité",
+                    4: "Vitesse",
+                    5: "Force",
+                    6: "Endurance",
                 };
 
                 const formatted = data.data.map((item) => ({
@@ -26,9 +34,19 @@ export const PerfChart = () => {
                 }));
 
                 setPerfData(formatted);
-            })
-            .catch((err) => console.error(err));
-    }, []);
+            } catch (err) {
+                console.error(err);
+                setError("Impossible de charger les données de performance.");
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadPerformance();
+    }, [userId]);
+
+    if (loading) return <p>Chargement...</p>;
+    if (error) return <p>{error}</p>;
 
     return (
         <div className="perf-chart">

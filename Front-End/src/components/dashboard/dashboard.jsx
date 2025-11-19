@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserMainData } from "../../services/api";
 import "./index.scss";
 
@@ -15,14 +16,23 @@ import GluLogo from '../../assets/images/apple.png';
 import LipLogo from '../../assets/images/cheeseburger.png';
 
 export const Dashboard = () => {
+    const { id } = useParams();
+    const userId = Number(id) || 12;
+
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        getUserMainData(12)
-            .then((data) => setUser(data))
-            .catch((err) => setError(err.message));
-    }, []);
+        async function loadUser() {
+            try {
+                const data = await getUserMainData(userId);
+                setUser(data);
+            } catch (err) {
+                setError(err.message);
+            }
+        }
+        loadUser();
+    }, [userId]);
 
     if (error) return <p>Erreur : {error}</p>;
     if (!user) return <p>Chargement...</p>;
@@ -40,7 +50,7 @@ export const Dashboard = () => {
             <div className="dashboard-content">
                 <div className="dashboard-content-left">
                     <div className="content-top">
-                        <DailyActivity />
+                        <DailyActivity /> {/* tu pourrais passer userId en props si besoin */}
                     </div>
                     <div className="content-bot">
                         <LengthSession />

@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserAverageSessions } from "../../services/api";
 import "./index.scss";
 
 import { LineChart, Line, XAxis, YAxis, Tooltip, Rectangle, ResponsiveContainer } from "recharts";
 
 export const LengthSession = () => {
+    const { id } = useParams();
+    const userId = Number(id) || 12;
+
     const [sessionData, setSessionData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -12,7 +16,6 @@ export const LengthSession = () => {
     useEffect(() => {
         async function loadSessions() {
             try {
-                const userId = 12;
                 const data = await getUserAverageSessions(userId);
 
                 const days = ["L", "M", "M", "J", "V", "S", "D"];
@@ -33,7 +36,7 @@ export const LengthSession = () => {
         }
 
         loadSessions();
-    }, []);
+    }, [userId]);
 
     if (loading) return <p>Chargement...</p>;
     if (error) return <p>{error}</p>;

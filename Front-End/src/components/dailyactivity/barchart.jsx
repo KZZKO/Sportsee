@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getUserActivity } from "../../services/api";
 import "./index.scss";
 
 // Recharts
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-
 export const DailyActivity = () => {
+    const { id } = useParams();
+    const userId = Number(id) || 12;
+
     const [activityData, setActivityData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -14,7 +17,6 @@ export const DailyActivity = () => {
     useEffect(() => {
         async function loadActivity() {
             try {
-                const userId = 12;
                 const data = await getUserActivity(userId);
 
                 const formattedData = data.sessions.map((session, index) => ({
@@ -33,7 +35,7 @@ export const DailyActivity = () => {
         }
 
         loadActivity();
-    }, []);
+    }, [userId]);
 
     if (loading) return <p>Chargement...</p>;
     if (error) return <p>{error}</p>;
@@ -53,7 +55,6 @@ export const DailyActivity = () => {
                         textAlign: "center",
                         fontSize: "12px",
                         lineHeight: "20px",
-                        fontFamily: "",
                     }}
                 >
                     <p>{`${payload[0].value} kg`}</p>
@@ -63,7 +64,6 @@ export const DailyActivity = () => {
         }
         return null;
     };
-
 
     return (
         <div className="daily-activity">
