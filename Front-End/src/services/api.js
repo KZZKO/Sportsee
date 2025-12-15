@@ -9,6 +9,7 @@ import {
 
 // Models
 import AverageSessionsModel from "../models/AverageSessionsModel";
+import PerformanceModel from "../models/PerformanceModel";
 
 const URL = import.meta.env.VITE_API_URL;
 const USE_MOCK = true;
@@ -67,5 +68,6 @@ export async function getUserPerformance(userId) {
             })
             .then((json) => json.data);
 
-    return data;
+
+    return new PerformanceModel(data);
 }

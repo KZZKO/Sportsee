@@ -18,22 +18,7 @@ export const PerfChart = () => {
         async function loadPerformance() {
             try {
                 const data = await getUserPerformance(userId);
-
-                const kindMapping = {
-                    1: "Energie",
-                    2: "Cardio",
-                    3: "Intensité",
-                    4: "Vitesse",
-                    5: "Force",
-                    6: "Endurance",
-                };
-
-                const formatted = data.data.map((item) => ({
-                    subject: kindMapping[item.kind],
-                    value: item.value,
-                }));
-
-                setPerfData(formatted);
+                setPerfData(data.data);
             } catch (err) {
                 console.error(err);
                 setError("Impossible de charger les données de performance.");
@@ -44,6 +29,7 @@ export const PerfChart = () => {
 
         loadPerformance();
     }, [userId]);
+
 
     if (loading) return <p>Chargement...</p>;
     if (error) return <p>{error}</p>;
