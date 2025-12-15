@@ -17,18 +17,9 @@ export const LengthSession = () => {
         async function loadSessions() {
             try {
                 const data = await getUserAverageSessions(userId);
-
-                const days = ["L", "M", "M", "J", "V", "S", "D"];
-
-                const formattedData = data.sessions.map((session, index) => ({
-                    id: index,
-                    day: days[index],
-                    sessionLength: session.sessionLength,
-                }));
-
-                setSessionData(formattedData);
+                setSessionData(data.sessions);
             } catch (err) {
-                console.error("Erreur lors du chargement des sessions :", err);
+                console.error(err);
                 setError("Impossible de charger les données de sessions.");
             } finally {
                 setLoading(false);

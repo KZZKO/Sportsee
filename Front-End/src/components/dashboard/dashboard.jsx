@@ -50,7 +50,7 @@ export const Dashboard = () => {
             <div className="dashboard-content">
                 <div className="dashboard-content-left">
                     <div className="content-top">
-                        <DailyActivity /> {/* tu pourrais passer userId en props si besoin */}
+                        <DailyActivity />
                     </div>
                     <div className="content-bot">
                         <LengthSession />
